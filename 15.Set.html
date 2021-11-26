@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // ES6提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值
+
+      // 1、创建 Set 数据结构
+      const s1 = new Set();
+      console.log(s1.size); //  0
+      const s2 = new Set(["a", "b"]);
+      console.log(s2.size); //  2
+      console.log("=============================");
+
+      // 2、利用 Set 数据结构做数组去重
+      const s3 = new Set(["a", "a", "b", "b"]);
+      console.log(s3.size); //  2
+      //  去重
+      const ary = [...s3];
+      console.log(ary);     //  2
+
+      // 向set结构中添加值 使用add方法
+      const s4 = new Set();
+      s4.add("a").add("b");
+      console.log(s4.size); //  2
+      console.log("=============================");
+
+      // 从set结构中删除值 用到的方法是delete
+      const r1 = s4.delete("c");
+      console.log(s4.size); //  2
+      console.log(r1);      //  false
+      console.log("=============================");
+
+      // 判断某一个值是否是set数据结构中的成员 使用has
+      const r2 = s4.has("d");
+      console.log(r2);     // false
+      console.log("=============================");
+
+      // 清空set数据结构中的值 使用clear方法
+      s4.clear();
+      console.log(s4.size); //  0
+      console.log("=============================");
+
+      // 遍历set数据结构 从中取值
+      const s5 = new Set(["a", "b", "c"]);
+      s5.forEach((value) => {
+        console.log(value); //  a b c
+      });
+    </script>
+  </body>
+</html>
